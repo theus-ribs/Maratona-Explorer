@@ -1,5 +1,3 @@
-//let respostaElement = document.getElementById("resposta")
-//const pergunta = document.querySelector("#pergunta")
 const respostas = [
     "Certeza!",
     "Não tenho tanta certeza.",
@@ -35,6 +33,8 @@ function fazerPergunta() {
         document.getElementById("pergunta-baixo").innerHTML = (`${pergunta}`)
         document.getElementById("resposta").innerHTML = (`${respostas[numeroAleatorio]}`)
         document.getElementById("pergunta").value=""
+        document.getElementById("resposta").style.opacity = 1
+        document.getElementById("pergunta-baixo").style.opacity = 0.7
         
         //sumir a resposta depois de 3 segundos
         setTimeout(function(){
@@ -42,19 +42,7 @@ function fazerPergunta() {
         }, 3000)&&
         setTimeout(function(){
             document.getElementById("pergunta-baixo").style.opacity = 0
-        }, 3000)&&
-        setTimeout(function(){
-            document.getElementById("pergunta-baixo").innerHTML = ""
-        }, 4000)&&
-        setTimeout(function(){
-            document.getElementById("resposta").innerHTML = ""
-        }, 4000)&&
-        setTimeout(function(){
-            document.getElementById("resposta").style.opacity = 1
-        }, 4000)&&
-        setTimeout(function(){
-            document.getElementById("pergunta-baixo").style.opacity = 0.7
-        }, 4000)
+        }, 3000)
     }
 }
 document.addEventListener('keypress', function(e) {
